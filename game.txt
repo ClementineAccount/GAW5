@@ -50,7 +50,6 @@ Buttons
 				show fishingButton
 				hookState is 0
 				timeUnit is 0
-			end
 Resources
 	*fish|fishes
 		name:fish|fishes
