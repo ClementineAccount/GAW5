@@ -33,10 +33,10 @@ Buttons
 		tooltip class:red
 
 	*sellFishButton
-		name:Sell your fishes
+		name:SellFish
 		desc:Sell fishes for money.
 		on click:yield 1 money
-		text:"Sell fish at the market."
+		text:Sell fish at the market.
 
 Resources
 	*fish|fishes
