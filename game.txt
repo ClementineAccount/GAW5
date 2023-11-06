@@ -25,7 +25,7 @@ Buttons
 		name:Go Fishing
 		desc:Attempt to fish... maybe you'd get a catch! If not, you have to try again after a bit of time.
 		on click:anim icon wobble
-		on click:yield 1 fish
+		on click:hookState is 1
 		on click:hide fishingButton
 		icon:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/fish.png
 		no text
@@ -38,13 +38,13 @@ Buttons
 		name:Sell Fish
 		desc:Sell fishes for money.
 		on click:yield 1 money
+		on click:show fishingButton
 		text:Sell fish at the market.
 
 	*timeTicker
 		desc:Increases the timer when the fishingButton is clicked
 		hidden
-		on tick:yield 1 fish
-
+		on tick: yield 1 time
 Resources
 	*fish|fishes
 		name:fish|fishes
@@ -61,4 +61,8 @@ Resources
 	*time
 		name:time
 		desc:Time unit for when to cast a net again. Hidden resource for a timer
+		hidden
+	*hookState
+		name:hook state
+		desc:The state of the hook. 0 = can cast. 1 = cannot cast. Maybe there'd be more
 		hidden
