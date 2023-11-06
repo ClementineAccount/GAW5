@@ -44,7 +44,13 @@ Buttons
 	*timeTicker
 		desc:Increases the timer when the fishingButton is clicked
 		hidden
-		on tick:yield 1 timeUnit
+		on tick:if (hookState is 1) yield 1 timeUnit
+		on tick:
+			if (timeUnit >= 5) and (hookState is 1)
+				show fishingButton
+				hookState is 0
+				timeUnit is 0
+			end
 Resources
 	*fish|fishes
 		name:fish|fishes
