@@ -35,7 +35,7 @@ Buttons
 Resources
 	*fish|fishes
 		name:fish|fishes
-		desc:These are your fish. they dont do anything yet lol
+		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them.
 		icon:icons[0,0]
 		class:noBackground
 		show earned
