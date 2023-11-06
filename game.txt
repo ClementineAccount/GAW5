@@ -46,10 +46,13 @@ Buttons
 		hidden
 		on tick:if (hookState is 1) yield 1 timeUnit
 		on tick:
-			if (timeUnit >= 5) and (hookState is 1)
+			if (timeUnit >= 5) 
 				show fishingButton
 				hookState is 0
 				timeUnit is 0
+			end
+		end
+
 Resources
 	*fish|fishes
 		name:fish|fishes
