@@ -48,6 +48,6 @@ Resources
 	*money|money
 		name:money|money
 		desc:Money can be exchanged for goods and services.
-		icon:icons[0,1]
+		icon:icons[1,0]
 		class:noBackground
 		show earned
