@@ -17,10 +17,7 @@ Layout
 	use default
 
 
-*timeTicker
-	desc:Increases the timer when the fishingButton is clicked
-	hidden
-	on tick:yield 1 fish
+
 
 Buttons
 	*fishingButton
@@ -42,6 +39,11 @@ Buttons
 		desc:Sell fishes for money.
 		on click:yield 1 money
 		text:Sell fish at the market.
+
+	*timeTicker
+		desc:Increases the timer when the fishingButton is clicked
+		hidden
+		on tick:yield 1 fish
 
 Resources
 	*fish|fishes
