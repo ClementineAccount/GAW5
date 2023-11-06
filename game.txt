@@ -1,0 +1,41 @@
+Let's make a game!
+	name:Fishing Game
+	by:Clem
+	desc:This is a simple fishing game that I am working on between 6/11/2023 to 12/11/2023. This is my first ever Idle Game Maker game!
+	created:6/11/2023
+	updated:6/11/2023
+	version:0.1.0
+
+Settings
+	background:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/ocean.jpg
+	building cost increase:115%
+	building cost refund:50%
+	spritesheet:icons, 48 by 48, stuff/bunnyIcons.png
+	stylesheet:stuff/bigBlue.css
+
+Layout
+	use default
+
+
+Buttons
+	*fishingButton
+        tag:button
+		name:go fishing
+		desc:Click this
+		on click:anim icon wobble
+		on click:yield 1 fish
+		on click:hide fishingButton
+		icon:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/fish.png
+		no text
+		class:bigButton hasFlares
+		icon class:shadowed
+		tooltip origin:bottom
+		tooltip class:red
+
+Resources
+	*fish|fishes
+		name:fish|fishes
+		desc:These are your fish. they dont do anything yet lol
+		icon:icons[0,0]
+		class:noBackground
+		show earned
