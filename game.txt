@@ -27,7 +27,7 @@ Buttons
 		on click:anim icon wobble
 		on click:hookState is 1
 		on click:hide fishingButton
-		on click:if (chance(5%)) yield 1 fish
+		on click:if (chance(25%)) yield 1 fish
 		icon:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/fish.png
 		no text
 		class:bigButton hasFlares
@@ -47,7 +47,7 @@ Buttons
 		hidden
 		on tick:if (hookState is 1) yield 1 timeUnit
 		on tick:
-			if (timeUnit >= 5) 
+			if (timeUnit >= 2) 
 				show fishingButton
 				hookState is 0
 				timeUnit is 0
