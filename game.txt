@@ -39,3 +39,9 @@ Resources
 		icon:icons[0,0]
 		class:noBackground
 		show earned
+	*money|money
+		name:money|money
+		desc:Money can be exchanged for goods and services.
+		icon:icons[0,0]
+		class:noBackground
+		show earned
