@@ -20,8 +20,8 @@ Layout
 Buttons
 	*fishingButton
         tag:button
-		name:go fishing
-		desc:Click this
+		name:Go Fishing
+		desc:Attempt to fish... maybe you'd get a catch! If not, you have to try again after a bit of time.
 		on click:anim icon wobble
 		on click:yield 1 fish
 		on click:hide fishingButton
