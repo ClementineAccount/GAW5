@@ -44,7 +44,7 @@ Buttons
 	*timeTicker
 		desc:Increases the timer when the fishingButton is clicked
 		hidden
-		on tick: yield 1 time
+		on tick:yield 1 timeUnit
 Resources
 	*fish|fishes
 		name:fish|fishes
@@ -58,8 +58,8 @@ Resources
 		icon:icons[1,0]
 		class:noBackground
 		show earned
-	*time
-		name:time
+	*timeUnit
+		name:timeUnit
 		desc:Time unit for when to cast a net again. Hidden resource for a timer
 		hidden
 	*hookState
