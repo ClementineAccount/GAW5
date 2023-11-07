@@ -25,6 +25,23 @@
 	margin-top:4px;
 }
 
+.flavor-text
+{
+	z-index:0;
+	top: 10%;
+	position: absolute;
+	cursor:pointer;
+	background:rgba(0,0,0,0);
+	box-shadow:none;
+}
+
+
+.flavor-text:hover,.thing.lit
+{
+	background:rgba(0,0,0,0);
+	box-shadow:none;
+}
+
 
 #box-main
 {

@@ -11,14 +11,11 @@ Settings
 	building cost increase:115%
 	building cost refund:50%
 	spritesheet:icons, 48 by 48, https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/fishSheet.png
-	stylesheet:https://raw.githubusercontent.com/ClementineAccount/GAW5/main/style.txt
+	stylesheet:https://pastebin.com/raw/BgW42Ytz
 
 
 Layout
   use default
-
-
-
 
 Buttons
 	*fishingButton
@@ -48,6 +45,14 @@ Buttons
 		tooltip origin:bottom
 		tooltip class:red
 
+	*flavorText
+		name:flavorText
+		desc:Quirky flavor text that comments on things just like in Cookie Clicker
+		text:A nice day for fishing...
+		no tooltip
+		no click
+		class:flavor-text
+
 	*sellFishButton
 		name:Sell Fish
 		desc:Sell fishes for money.
@@ -76,6 +81,8 @@ Buttons
 		text:Sell fish at the market.
 		tooltip origin:bottom
 		tooltip class:red
+
+
 
 	*timeTicker
 		desc:Increases the timer when the fishingButton is clicked
