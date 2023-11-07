@@ -30,7 +30,8 @@ Buttons
 		on click:
 			if (chance(50%)) 
 				if (chance(50%))
-				yield 1 fish
+					yield 1 redFish
+				end
 			end
 		end
 		icon:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/fish.png
@@ -63,6 +64,13 @@ Resources
 	*fish|fishes
 		name:fish|fishes
 		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them.
+		icon:icons[0,0]
+		class:noBackground
+		show earned
+
+	*redFish
+		name:red fish|red fishes
+		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The red fish is worth 1 money at the market.
 		icon:icons[0,0]
 		class:noBackground
 		show earned
