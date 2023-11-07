@@ -63,6 +63,16 @@ Buttons
 			yield ((yellowFish) * 10) money
 			yellowFish is 0
 		end
+		on tick:
+			hide sellFishButton
+			if (redFish > 0)
+				show sellFishButton
+			else if (blueFish > 0)
+				show sellFishButton
+			else if (yellowFish > 0)
+				show sellFishButton 
+			end
+		end
 		text:Sell fish at the market.
 		tooltip origin:bottom
 		tooltip class:red
