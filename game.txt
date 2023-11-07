@@ -30,6 +30,12 @@ Buttons
 		on click:
 			if (chance(50%)) 
 				if (chance(50%))
+					if (chance(40%))
+						yield 1 blueFish
+					else
+						yield 1 yellowFish
+					end
+				else
 					yield 1 redFish
 				end
 			end
@@ -74,6 +80,20 @@ Resources
 		icon:icons[0,0]
 		class:noBackground
 		show earned
+
+	*blueFish
+		name:blue fish|blue fishes
+		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The blue fish is worth 5 money at the market.
+		icon:icons[0,0]
+		class:noBackground
+		show earned
+
+	*yellowFish
+		name:yellow fish|yellow fishes
+		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The yellow fish is worth 10 money at the market.
+		icon:icons[0,0]
+		class:noBackground
+		show earned		
 	
 	*money|money
 		name:money|money
