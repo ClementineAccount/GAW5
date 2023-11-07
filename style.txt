@@ -46,7 +46,7 @@
 }
 #box-buttons
 {
-	top:0px;
+	top:20%;
 	right:0px;
 	bottom:0px;
 	left:0px;
