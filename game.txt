@@ -11,10 +11,11 @@ Settings
 	building cost increase:115%
 	building cost refund:50%
 	spritesheet:icons, 48 by 48, https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/fishSheet.png
-	stylesheet:stuff/bigBlue.css
+	stylesheet:https://raw.githubusercontent.com/ClementineAccount/GAW5/main/style.txt
+
 
 Layout
-	use default
+  use default
 
 
 
@@ -63,6 +64,8 @@ Buttons
 			yellowFish is 0
 		end
 		text:Sell fish at the market.
+		tooltip origin:bottom
+		tooltip class:red
 
 	*timeTicker
 		desc:Increases the timer when the fishingButton is clicked
