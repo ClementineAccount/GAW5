@@ -50,8 +50,18 @@ Buttons
 	*sellFishButton
 		name:Sell Fish
 		desc:Sell fishes for money.
-		on click:yield 1 money
-		on click:show fishingButton
+		on click:
+			yield (redFish) money
+			redFish is 0
+		end
+		on click:
+			yield ((blueFish) * 5) money
+			blueFish is 0
+		end
+		on click:
+			yield ((yellowFish) * 10) money
+			yellowFish is 0
+		end
 		text:Sell fish at the market.
 
 	*timeTicker
