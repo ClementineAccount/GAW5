@@ -27,7 +27,12 @@ Buttons
 		on click:anim icon wobble
 		on click:hookState is 1
 		on click:hide fishingButton
-		on click:if (chance(25%)) yield 1 fish
+		on click:
+			if (chance(50%)) 
+				if (chance(50%))
+				yield 1 fish
+			end
+		end
 		icon:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/fish.png
 		no text
 		class:bigButton hasFlares
@@ -61,6 +66,7 @@ Resources
 		icon:icons[0,0]
 		class:noBackground
 		show earned
+	
 	*money|money
 		name:money|money
 		desc:Money can be exchanged for goods and services.
