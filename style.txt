@@ -48,7 +48,7 @@
 {
 	top:0px;
 	right:0px;
-	bottom:0px;
+	bottom:36px;
 	left:0px;
 	position:absolute;
 }
