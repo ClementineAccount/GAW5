@@ -67,12 +67,6 @@ Buttons
 		end
 
 Resources
-	*fish|fishes
-		name:fish|fishes
-		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them.
-		icon:icons[0,0]
-		class:noBackground
-		show earned
 
 	*redFish
 		name:red fish|red fishes
