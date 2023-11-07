@@ -46,9 +46,10 @@ Buttons
 		tooltip class:red
 
 	*flavorText
-		name:flavorText
+		name:flavor text item
 		desc:Quirky flavor text that comments on things just like in Cookie Clicker
 		text:A nice day for fishing...
+		on tick:hide flavorText
 		no tooltip
 		no click
 		class:flavor-text
