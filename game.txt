@@ -3,8 +3,8 @@ Let's make a game!
 	by:Clem
 	desc:This is a simple fishing game that I am working on between 6/11/2023 to 12/11/2023. This is my first ever Idle Game Maker game! The ocean image is from: https://libreshot.com/calm-sea/ and the fish graphics are from: https://captainskeleto.itch.io/tropical-fishing-assets-pixelart-pixel-art-sprite-tropical-fish-pack-for-rpg-fan
 	created:6/11/2023
-	updated:7/11/2023
-	version:0.2.0
+	updated:8/11/2023
+	version:0.3.0
 
 Settings
 	background:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/ocean.jpg
@@ -58,15 +58,15 @@ Buttons
 		name:Sell Fish
 		desc:Sell fishes for money.
 		on click:
-			yield (redFish) money
+			yield (redFish * (redFishPrice)) money
 			redFish is 0
 		end
 		on click:
-			yield ((blueFish) * 5) money
+			yield ((blueFish) * 10) money
 			blueFish is 0
 		end
 		on click:
-			yield ((yellowFish) * 10) money
+			yield ((yellowFish) * 100) money
 			yellowFish is 0
 		end
 		on tick:
@@ -99,23 +99,29 @@ Buttons
 
 Resources
 
+	*redFishPrice
+		name:price of red fish
+		desc:The price of the red fish.
+		start with:1
+		hidden
+
 	*redFish
 		name:red fish|red fishes
-		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The red fish is worth 1 money at the market.
+		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The red fish is worth (redFishPrice) money at the market.
 		icon:icons[0,0]
 		class:noBackground
 		show earned
 
 	*blueFish
 		name:blue fish|blue fishes
-		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The blue fish is worth 5 money at the market.
+		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The blue fish is worth 10 money at the market.
 		icon:icons[3,0]
 		class:noBackground
 		show earned
 
 	*yellowFish
 		name:yellow fish|yellow fishes
-		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The yellow fish is worth 10 money at the market.
+		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The yellow fish is worth 100 money at the market.
 		icon:icons[2,0]
 		class:noBackground
 		show earned		
