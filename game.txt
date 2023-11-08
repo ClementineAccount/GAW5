@@ -126,8 +126,8 @@ Resources
 		hidden
 
 	*redFish
-		name:red fish|red fishes
-		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The red fish is worth [redFishPrice] money at the market.
+		name:Red Tuna|Red Tuna
+		desc:The red tuna is common and taken for granted by the population. They currently fetch [redFishPrice] at the market. If only we could convince the people to want them... really really want them. If so, we could sell them at a higher price as the demand increases.
 		icon:icons[0,0]
 		class:noBackground
 		show earned
