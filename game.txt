@@ -167,3 +167,11 @@ Resources
 		name:hook state
 		desc:The state of the hook. 0 = can cast. 1 = cannot cast. Maybe there'd be more
 		hidden
+
+Buildings
+	*boat|boats
+		name:Fishing boat|Fishing boats
+		desc:Hire another fishing boat.<//><b>Effect:</b><.>Attempts to catch fish every second.
+		cost:100 money
+		on tick:do catch with sellFishButton
+		req:100 money:earned
