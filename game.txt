@@ -44,7 +44,7 @@ Buttons
 				yield 1 redFish
 				firstAttempt is 0
 			else if (chance((fishChance)%)) 
-				if (chance(25%))
+				if (chance(45%))
 					if (chance(85%))
 						yield 1 blueFish
 					else
@@ -214,6 +214,13 @@ Buildings
 		cost:50 money
 		cost increase:200%
 		passive:redFishPrice is (billboard * 2)
+	
+	*lightHouse
+		name:Light House|Light Houses
+		desc:Purchase a light house to guide your ships. <//><b>Effect:</b><.>Doubles the [n:blueFish] that a [n:boat] can catch.
+		cost:250 money
+		cost increase:125%
+		passive:multiply yield of boat by 2
 
 	*poacher
 		name:Poacher|Poachers
