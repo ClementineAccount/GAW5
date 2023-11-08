@@ -179,3 +179,10 @@ Buildings
 		desc:Hire another fishing boat.<//><b>Effect:</b><.>Catch 1 redfish every 5 seconds
 		cost:100 money
 		on tick:yield 0.25 redFish
+
+Upgrades
+	*lowerCooldown
+		name:Sharpen fishing hook
+		desc:Decreases the amount of time you need to wait between cooldown by 1 second
+		cost:15 money
+		passive:cooldownCost is 4
