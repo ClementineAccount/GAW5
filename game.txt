@@ -4,7 +4,7 @@ Let's make a game!
 	desc:This is a simple fishing game that I am working on between 6/11/2023 to 12/11/2023. This is my first ever Idle Game Maker game! The ocean image is from: https://libreshot.com/calm-sea/ and the fish graphics are from: https://captainskeleto.itch.io/tropical-fishing-assets-pixelart-pixel-art-sprite-tropical-fish-pack-for-rpg-fan
 	created:6/11/2023
 	updated:8/11/2023
-	version:0.8.2
+	version:0.9.2
 
 Settings
 	background:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/ocean.jpg
@@ -188,12 +188,17 @@ Resources
 		hidden
 
 Buildings
-	*boat|boats
-		name:Fishing boat|Fishing boats
-		desc:Hire another fishing boat. <//><b>Effect:</b><.>Catch 1 [n:redFish] every 5 seconds and 1 [n:blueFish] every 30 seconds.
+	*fisherman|fishermen
+		name:Fisherman|Fishermen
+		desc:Hire a local fisherman. <//><b>Effect:</b><.>Catch 1 [n:redFish] every 5 seconds.
 		cost:100 money
-		on tick:yield 0.25 redFish
-		on tick:yield 0.033 blueFish
+		on tick:yield 0.2 redFish
+
+	*boat
+		name:Fishing Boat|Fishing Boats
+		desc:Purchase a fishing boat. <//><b>Effect:</b><.>Catch 1 [n:blueFish] every 10 seconds.
+		cost:1000 money
+		on tick:yield 0.1 blueFish
 
 Upgrades
 	*lowerCooldown
