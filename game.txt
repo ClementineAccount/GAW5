@@ -171,6 +171,6 @@ Resources
 Buildings
 	*boat|boats
 		name:Fishing boat|Fishing boats
-		desc:Hire another fishing boat.<//><b>Effect:</b><.>Attempts to catch fish every second.
+		desc:Hire another fishing boat.<//><b>Effect:</b><.>Catch 1 redfish every 5 seconds
 		cost:100 money
-		on tick:do catch with fishingButton
+		on tick:yield 0.25 redFish
