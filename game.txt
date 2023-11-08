@@ -17,6 +17,8 @@ Settings
 Layout
   use default
 
+
+
 Buttons
 	*fishingButton
         tag:button
@@ -25,6 +27,19 @@ Buttons
 		on click:anim icon wobble
 		on click:hookState is 1
 		on click:hide fishingButton
+		on catch:
+			if (chance(50%)) 
+				if (chance(50%))
+					if (chance(40%))
+						yield 1 blueFish
+					else
+						yield 1 yellowFish
+					end
+				else
+					yield 1 redFish
+				end
+			end
+		end
 		on click:
 			if (chance(50%)) 
 				if (chance(50%))
