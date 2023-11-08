@@ -210,10 +210,20 @@ Buildings
 
 	*billboard
 		name:Billboard|Billboards
-		desc:Purchase a billboard to market the [n:redFish], increasing its price.
+		desc:Purchase a billboard to market the [n:redFish], increasing its price. <//><b>Effect:</b><.>Set the base price of [n:redFish] to equal the total number of billboards owned.
 		cost:50 money
 		cost increase:200%
-		passive:redFishPrice is (billboard * 2)
+		passive:redFishPrice is ((billboard) * 2)
+		passive:redFishPrice is redFishPrice * ((factory) * 0.25 + 1)
+
+	*factory
+		name:Canning Factory|Canning Factories
+		desc:Build factories to produce canned [n:redFish], increasing its price. <//><b>Effect:</b><.>Multiply the price of [n:redFish] by 2% for every factory owned, after accounting for billboard's passive effect.
+		cost:150 money
+		cost increase:200%
+		req:1 billboard
+		passive:redFishPrice is ((billboard) * 2)
+		passive:redFishPrice is redFishPrice * ((factory) * 0.25 + 1)
 	
 	*lightHouse
 		name:Light House|Light Houses
