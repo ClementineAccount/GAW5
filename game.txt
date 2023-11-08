@@ -311,4 +311,4 @@ Upgrades
 	*winUpgrade
 		name:Pay off debts.
 		desc:Pay off all your gambling debts and win the game.
-		cost:1000000
+		cost:1000000 money
