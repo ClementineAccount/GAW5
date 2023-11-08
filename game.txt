@@ -62,7 +62,7 @@ Buttons
 			redFish is 0
 		end
 		on click:
-			yield ((blueFish) * 10) money
+			yield ((blueFish) * (blueFishPrice)) money
 			blueFish is 0
 		end
 		on click:
@@ -112,9 +112,15 @@ Resources
 		class:noBackground
 		show earned
 
+	*blueFishPrice
+		name:price of the blue fish
+		desc:The price of the blue fish
+		start with:10
+		hidden
+
 	*blueFish
 		name:blue fish|blue fishes
-		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The blue fish is worth 10 money at the market.
+		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The blue fish is worth [blueFishPrice] money at the market.
 		icon:icons[3,0]
 		class:noBackground
 		show earned
