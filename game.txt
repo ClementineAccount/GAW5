@@ -29,8 +29,8 @@ Buttons
 		on click:hide fishingButton
 		on catch:
 			if (chance(50%)) 
-				if (chance(50%))
-					if (chance(40%))
+				if (chance(25%))
+					if (chance(85%))
 						yield 1 blueFish
 					else
 						yield 1 yellowFish
@@ -42,8 +42,8 @@ Buttons
 		end
 		on click:
 			if (chance(50%)) 
-				if (chance(50%))
-					if (chance(40%))
+				if (chance(25%))
+					if (chance(85%))
 						yield 1 blueFish
 					else
 						yield 1 yellowFish
