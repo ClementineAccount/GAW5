@@ -199,7 +199,7 @@ Upgrades
 	*lowerCooldown
 		name:Better Hook 1
 		desc:Decreases the amount of time you need to wait between fishing by 1 second
-		cost:2 money
+		cost:3 money
 		passive:cooldownCost is 4
 
 	*lowerCooldown2
@@ -233,7 +233,7 @@ Upgrades
 	*betterBait1
 		name:Better Bait 1
 		desc:Increases the chance of catching any fish per fishing attempt to 40%
-		cost:2 money
+		cost:3 money
 		passive:fishChance is 40
 
 	*betterBait2
