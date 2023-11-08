@@ -4,7 +4,7 @@ Let's make a game!
 	desc:This is a simple fishing game that I am working on between 6/11/2023 to 12/11/2023. This is my first ever Idle Game Maker game! The ocean image is from: https://libreshot.com/calm-sea/ and the fish graphics are from: https://captainskeleto.itch.io/tropical-fishing-assets-pixelart-pixel-art-sprite-tropical-fish-pack-for-rpg-fan
 	created:6/11/2023
 	updated:8/11/2023
-	version:0.9.2
+	version:0.10.0
 
 Settings
 	background:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/ocean.jpg
@@ -198,12 +198,14 @@ Buildings
 		name:Fisherman|Fishermen
 		desc:Hire a local fisherman. <//><b>Effect:</b><.>Catch 1 [n:redFish] every 5 seconds.
 		cost:100 money
+		cost increase:25%
 		on tick:yield 0.2 redFish
 
 	*boat
 		name:Fishing Boat|Fishing Boats
 		desc:Purchase a fishing boat. <//><b>Effect:</b><.>Catch 1 [n:blueFish] every 10 seconds.
-		cost:1000 money
+		cost:500 money
+		cost increase:25%
 		on tick:yield 0.1 blueFish
 
 	*billboard
@@ -215,13 +217,12 @@ Buildings
 
 	*poacher
 		name:Poacher|Poachers
-		desc:Hire a poacher to illegally fish for [n:yellowFish]. <//><b>Effect:</b><.> Each poacher has a 5% chance of catching 0.1 [n:yellowFish] every second.
-		cost:1money
-		cost increase:100%
-		passive:show poacherTimeUnit
+		desc:Hire a poacher to illegally fish for [n:yellowFish]. <//><b>Effect:</b><.> Every second there is a 5% chance to catch a [n:yellowFish] for every poacher you own.
+		cost:750 money
+		cost increase:110%
 		on tick: 
 			if (chance(5%))
-				yield 0.1 yellowFish
+				yield 1 yellowFish
 			end
 		end
 
