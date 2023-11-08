@@ -187,6 +187,12 @@ Resources
 		start with:1
 		hidden
 
+	*poacherTimeUnit
+		name:Poaching Completion Rate
+		desc:This is the poaching completion rate in seconds. When it reaches 120, your poachers will successfully catch a yellow fish.
+		start with:0
+		hidden
+
 Buildings
 	*fisherman|fishermen
 		name:Fisherman|Fishermen
@@ -204,7 +210,20 @@ Buildings
 		name:Billboard|Billboards
 		desc:Purchase a billboard to market the [n:redFish], increasing its price.
 		cost:250 money
+		cost increase:25%
 		passive:redFishPrice is (billboard * 2)
+
+	*poacher
+		name:Poacher|Poachers
+		desc:Hire a poacher to illegally fish for [n:yellowFish]. <//><b>Effect:</b><.> Each poacher has a 5% chance of catching 0.1 [n:yellowFish] every second.
+		cost:1money
+		cost increase:100%
+		passive:show poacherTimeUnit
+		on tick: 
+			if (chance(5%))
+				yield 0.1 yellowFish
+			end
+		end
 
 Upgrades
 	*lowerCooldown
