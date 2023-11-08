@@ -197,22 +197,22 @@ Buildings
 	*fisherman|fishermen
 		name:Fisherman|Fishermen
 		desc:Hire a local fisherman. <//><b>Effect:</b><.>Catch 1 [n:redFish] every 5 seconds.
-		cost:100 money
-		cost increase:25%
+		cost:20 money
+		cost increase:125%
 		on tick:yield 0.2 redFish
 
 	*boat
 		name:Fishing Boat|Fishing Boats
 		desc:Purchase a fishing boat. <//><b>Effect:</b><.>Catch 1 [n:blueFish] every 10 seconds.
-		cost:500 money
-		cost increase:25%
+		cost:100 money
+		cost increase:125%
 		on tick:yield 0.1 blueFish
 
 	*billboard
 		name:Billboard|Billboards
 		desc:Purchase a billboard to market the [n:redFish], increasing its price.
 		cost:250 money
-		cost increase:25%
+		cost increase:125%
 		passive:redFishPrice is (billboard * 2)
 
 	*poacher
@@ -236,14 +236,14 @@ Upgrades
 	*lowerCooldown2
 		name:Better Hook 2
 		desc:Decreases the amount of time you need to wait between fishing by another 1 second
-		cost:25 money
+		cost:10 money
 		req:have lowerCooldown
 		passive:cooldownCost is 3
 
 	*lowerCooldown3
 		name:Better Hook 3
 		desc:Decreases the amount of time you need to wait between fishing by another 1 second
-		cost:100 money
+		cost:50 money
 		req:have lowerCooldown2
 		passive:cooldownCost is 2
 
@@ -270,7 +270,7 @@ Upgrades
 	*betterBait2
 		name:Better Bait 2
 		desc:Increases the chance of catching any fish per fishing attempt to 60%
-		cost:20 money
+		cost:10 money
 		req:have betterBait1
 		passive:fishChance is 60
 
@@ -291,20 +291,20 @@ Upgrades
 	*betterNet1
 		name:Better Net 1
 		desc:Doubles the output of each fishing attempt. This stacks with other nets.
-		cost:250 money
+		cost:10 money
 		passive:multiply yield of fishingButton by 2
 
 	*betterNet2
 		name:Better Net 2
 		desc:Doubles the output of each fishing attempt. This stacks with other nets.
-		cost:1200 money
+		cost:150 money
 		req:have betterNet1
 		passive:multiply yield of fishingButton by 2
 
 	*betterNet3
 		name:Better Net 3
 		desc:Doubles the output of each fishing attempt. This stacks with other nets.
-		cost:2000 money
+		cost:200 money
 		req:have betterNet2
 		passive:multiply yield of fishingButton by 2
 
