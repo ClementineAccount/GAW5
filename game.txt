@@ -172,13 +172,19 @@ Resources
 		name:hook state
 		desc:The state of the hook. 0 = can cast. 1 = cannot cast. Maybe there'd be more
 		hidden
+	*fishChance
+		name:fish chance
+		desc:The chance of catching a fish at all
+		start with:20
+		hidden
 
 Buildings
 	*boat|boats
 		name:Fishing boat|Fishing boats
-		desc:Hire another fishing boat.<//><b>Effect:</b><.>Catch 1 redfish every 5 seconds
+		desc:Hire another fishing boat. <//><b>Effect:</b><.>Catch 1 [n:redFish] every 5 seconds and 1 [n:blueFish] every 30 seconds.
 		cost:100 money
 		on tick:yield 0.25 redFish
+		on tick:yield 0.033 blueFish
 
 Upgrades
 	*lowerCooldown
@@ -214,3 +220,9 @@ Upgrades
 		cost:15 money
 		req:have lowerCooldown4
 		passive:cooldownCost is 0
+
+	*betterBait1
+		name:Better Bait 1
+		desc:Increases the chance of catching any fish per fishing attempt
+		cost:15 money
+		passive:cooldownCost is 4
