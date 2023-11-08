@@ -28,7 +28,7 @@ Buttons
 		on click:if (cooldownCost > 0) hide fishingButton
 		on catch:
 			if (chance((fishChance)%)) 
-				if (chance(25%))
+				if (chance(50%))
 					if (chance(85%))
 						yield 1 blueFish
 					else
