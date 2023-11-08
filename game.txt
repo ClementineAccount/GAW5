@@ -74,7 +74,7 @@ Buttons
 	*sellFishButton
 		name:Sell Fish
 		desc:Sell your fishes for money.
-		on click:
+		on click: 
 			yield (redFish * (redFishPrice)) money
 			redFish is 0
 		end
@@ -199,6 +199,12 @@ Buildings
 		desc:Purchase a fishing boat. <//><b>Effect:</b><.>Catch 1 [n:blueFish] every 10 seconds.
 		cost:1000 money
 		on tick:yield 0.1 blueFish
+
+	*billboard
+		name:Billboard|Billboards
+		desc:Purchase a billboard to market the [n:redFish], increasing its price.
+		cost:250 money
+		passive:redFishPrice is (billboard * 2)
 
 Upgrades
 	*lowerCooldown
