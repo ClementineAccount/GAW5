@@ -173,5 +173,4 @@ Buildings
 		name:Fishing boat|Fishing boats
 		desc:Hire another fishing boat.<//><b>Effect:</b><.>Attempts to catch fish every second.
 		cost:100 money
-		on tick:do catch with sellFishButton
-		req:100 money:earned
+		on tick:do catch with fishingButton
