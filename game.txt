@@ -53,7 +53,7 @@ Buttons
 				end
 			end
 		end
-		icon:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/fish.png
+		icon:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/hook.png
 		no text
 		class:bigButton hasFlares
 		icon class:shadowed
