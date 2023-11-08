@@ -4,7 +4,7 @@ Let's make a game!
 	desc:This is a simple fishing game that I am working on between 6/11/2023 to 12/11/2023. This is my first ever Idle Game Maker game! The ocean image is from: https://libreshot.com/calm-sea/ and the fish graphics are from: https://captainskeleto.itch.io/tropical-fishing-assets-pixelart-pixel-art-sprite-tropical-fish-pack-for-rpg-fan
 	created:6/11/2023
 	updated:8/11/2023
-	version:0.8.1
+	version:0.8.2
 
 Settings
 	background:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/ocean.jpg
@@ -126,8 +126,8 @@ Resources
 		hidden
 
 	*redFish
-		name:Red Tuna|Red Tuna
-		desc:The red tuna is common and taken for granted by the population. They currently fetch [redFishPrice] at the market. If only we could convince the people to want them... really really want them. If so, we could sell them at a higher price as the demand increases.
+		name:Red Tuna|Red Tunas
+		desc:The Red Tuna is common and taken for granted by the population. If only we could convince the people to want them... really really want them. If so, we could sell them at a higher price as the demand increases. The Red Tuna currently fetches [redFishPrice] money at the market. 
 		icon:icons[0,0]
 		class:noBackground
 		show earned
@@ -139,8 +139,8 @@ Resources
 		hidden
 
 	*blueFish
-		name:blue fish|blue fishes
-		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The blue fish is worth [blueFishPrice] money at the market.
+		name:Blue Trout|Blue Trouts
+		desc:The Blue Trout sells well and fetches a decent price but because it does, every other fishing company is also seeking them. This makes them harder for you to catch. We need to find a way to catch more of them and for our competitors to catch less of them. The Blue Trout currently fetches [blueFishPrice] money at the market. 
 		icon:icons[3,0]
 		class:noBackground
 		show earned
@@ -153,7 +153,7 @@ Resources
 
 	*yellowFish
 		name:Golden Roughy|Golden Roughies
-		desc:The Golden Roughy is a rare and endangered fish species, which makes catching and smuggling them difficult. They are worth [yellowFishPrice] money at black markets. Maybe by working to twist the laws, you might be able to decrease your overhead by selling them through more legal channels.
+		desc:The Golden Roughy is a rare and endangered fish species, which makes catching and smuggling them difficult. Maybe by working to twist the laws, you might be able to decrease your overhead by selling them through more legal channels. The Golden Roughy currently fetches [yellowFishPrice] money at the market... after paying hefty taxes and bribes.
 		icon:icons[2,0]
 		class:noBackground
 		show earned		
