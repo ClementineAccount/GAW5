@@ -25,7 +25,7 @@ Buttons
 		desc:Attempt to catch a fish. You currently have to wait [cooldownCost] seconds between fishing attempts.
 		on click:anim icon wobble
 		on click:hookState is 1
-		on click:hide fishingButton
+		on click:if (cooldownCost > 0) hide fishingButton
 		on catch:
 			if (chance(80%)) 
 				if (chance(25%))
@@ -183,6 +183,34 @@ Buildings
 Upgrades
 	*lowerCooldown
 		name:Sharpen fishing hook
-		desc:Decreases the amount of time you need to wait between cooldown by 1 second
+		desc:Decreases the amount of time you need to wait between fishing by 1 second
 		cost:15 money
 		passive:cooldownCost is 4
+
+	*lowerCooldown2
+		name:Make the rod more good
+		desc:Decreases the amount of time you need to wait between fishing by another 1 second
+		cost:15 money
+		req:have lowerCooldown
+		passive:cooldownCost is 3
+
+	*lowerCooldown3
+		name:Make the rod even  more gooder
+		desc:Decreases the amount of time you need to wait between fishing by another 1 second
+		cost:15 money
+		req:have lowerCooldown2
+		passive:cooldownCost is 2
+
+	*lowerCooldown4
+		name:Make the rod even  more and more gooder even more
+		desc:Decreases the amount of time you need to wait between fishing by another 1 second
+		cost:15 money
+		req:have lowerCooldown3
+		passive:cooldownCost is 1
+
+	*lowerCooldown5
+		name:Automatic fishing rod
+		desc:Decreases the cooldown time between fishing to 0 seconds
+		cost:15 money
+		req:have lowerCooldown4
+		passive:cooldownCost is 0
