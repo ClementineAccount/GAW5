@@ -107,7 +107,7 @@ Resources
 
 	*redFish
 		name:red fish|red fishes
-		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The red fish is worth (redFishPrice) money at the market.
+		desc:A fish is an aquatic, craniate, gill-bearing animal that lacks limbs and a soul... so its okay to murder them. The red fish is worth [redFishPrice] money at the market.
 		icon:icons[0,0]
 		class:noBackground
 		show earned
