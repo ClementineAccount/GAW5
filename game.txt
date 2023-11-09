@@ -4,7 +4,7 @@ Let's make a game!
 	desc:This is a simple fishing game that I am working on between 6/11/2023 to 12/11/2023. This is my first ever Idle Game Maker game! The ocean image is from: https://libreshot.com/calm-sea/ and the fish graphics are from: https://captainskeleto.itch.io/tropical-fishing-assets-pixelart-pixel-art-sprite-tropical-fish-pack-for-rpg-fan
 	created:6/11/2023
 	updated:8/11/2023
-	version:0.10.0
+	version:0.11.0
 
 Settings
 	background:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/ocean.jpg
@@ -28,8 +28,8 @@ Buttons
 		on click:if (cooldownCost > 0) hide fishingButton
 		on catch:
 			if (chance((fishChance)%)) 
-				if (chance(50%))
-					if (chance(85%))
+				if (chance(60%))
+					if (chance(65%))
 						yield 1 blueFish
 					else
 						yield 1 yellowFish
@@ -43,18 +43,25 @@ Buttons
 			if ((firstAttempt) is 1)
 				yield 1 redFish
 				firstAttempt is 0
-			else if (chance((fishChance)%)) 
-				if (chance(45%))
-					if (chance(85%))
+			else if ((fishChance) is 100)
+				if (chance(75%))
+						yield 1 blueFish
+					else
+						yield 1 yellowFish
+				end
+			else if ((chance((fishChance)%)) and ((fishChance) < 100)) 
+				if (chance(60%))
+					if (chance(75%))
 						yield 1 blueFish
 					else
 						yield 1 yellowFish
 					end
-				else
+				else if ((fishChance) < 100)
 					yield 1 redFish
 				end
 			end
 		end
+
 		icon:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/hook.png
 		no text
 		class:bigButton hasFlares
@@ -198,42 +205,42 @@ Buildings
 		name:Fisherman|Fishermen
 		desc:Hire a local fisherman. <//><b>Effect:</b><.>Catch 1 [n:redFish] every second.
 		cost:20 money
-		cost increase:101%
+		cost increase:115%
 		on tick:yield 1 redFish
 
 	*boat
 		name:Fishing Boat|Fishing Boats
-		desc:Purchase a fishing boat. <//><b>Effect:</b><.>Catch 1 [n:blueFish] every 10 seconds.
-		cost:50 money
-		cost increase:100%
-		on tick:yield 0.1 blueFish
+		desc:Purchase a fishing boat. <//><b>Effect:</b><.>Catch 1 [n:blueFish] every second.
+		cost:100 money
+		cost increase:125%
+		on tick:yield 0.5 blueFish
 
 	*factory
 		name:Canning Factory|Factories
-		desc:Purchase a canning factory for the [n:redFish], increasing its price. <//><b>Effect:</b><.>Double the price of [n:redFish] for each factory owned.
+		desc:Purchase a canning factory for the [n:redFish], increasing its price. <//><b>Effect:</b><.>setthe price of [n:redFish] for equal to double the number of factories owned.
 		cost:1000 money
-		cost increase:100%
-		passive:redFishPrice is pow(2, (factory))
+		cost increase:125%
+		passive:redFishPrice is ((factory) * 2)
 	
 	*lightHouse
 		name:Light House|Light Houses
-		desc:Purchase a light house to guide your ships. <//><b>Effect:</b><.>Doubles the [n:blueFish] that a [n:boat] can catch.
-		cost:250 money
-		cost increase:105%
+		desc:Purchase a light house to guide your ships. <//><b>Effect:</b><.>Multiplies the [n:blueFish] that a [n:boat] can catch by 2.
+		cost:500 money
+		cost increase:800%
 		passive:multiply yield of boat by 2
 
 	*lawyer
 		name:Lawyer|Lawyers
 		desc:Hire lawyers to lobby for decreased regulation of [n:yellowFish]. <//><b>Effect:</b><.>Doubles the price of [n:yellowFish].
 		cost:1000 money
-		cost increase:200%
-		passive:yellowFishPrice is 100 * pow(2, (lawyers))
+		cost increase:400%
+		passive:yellowFishPrice is 100 * pow(2,(lawyer))
 
 	*poacher
 		name:Poacher|Poachers
 		desc:Hire a poacher to illegally fish for [n:yellowFish]. <//><b>Effect:</b><.> Every second there is a 5% chance to catch a [n:yellowFish] for every poacher you own.
 		cost:250 money
-		cost increase:110%
+		cost increase:125%
 		on tick: 
 			if (chance(5%))
 				yield 1 yellowFish
@@ -257,21 +264,21 @@ Upgrades
 	*lowerCooldown3
 		name:Better Hook 3
 		desc:Decreases the amount of time you need to wait between fishing by another 1 second
-		cost:50 money
+		cost:1000 money
 		req:have lowerCooldown2
 		passive:cooldownCost is 2
 
 	*lowerCooldown4
 		name:Better Hook 4
 		desc:Decreases the amount of time you need to wait between fishing by another 1 second
-		cost:100 money
+		cost:10000 money
 		req:have lowerCooldown3
 		passive:cooldownCost is 1
 
 	*lowerCooldown5
 		name:Automatic Hook
 		desc:Decreases the cooldown time between fishing to 0 seconds
-		cost:100000 money
+		cost:500000 money
 		req:have lowerCooldown4
 		passive:cooldownCost is 0
 
@@ -296,10 +303,17 @@ Upgrades
 		passive:fishChance is 80
 
 	*betterBait4
+		name:Better Bait 4
+		desc:Increases the chance of catching any fish per fishing attempt to 90%
+		cost:10000 money
+		req:have betterBait3
+		passive:fishChance is 90
+
+	*betterBait5
 		name:Chemically Enhanced Bait
 		desc:Increases the chance of catching any fish per fishing attempt to 100%
 		cost:10000 money
-		req:have betterBait3
+		req:have betterBait4
 		passive:fishChance is 100
 
 	*betterNet1
@@ -311,18 +325,32 @@ Upgrades
 	*betterNet2
 		name:Better Net 2
 		desc:Doubles the output of each fishing attempt. This stacks with other nets.
-		cost:100 money
+		cost:500 money
 		req:have betterNet1
 		passive:multiply yield of fishingButton by 2
 
 	*betterNet3
 		name:Better Net 3
 		desc:Doubles the output of each fishing attempt. This stacks with other nets.
-		cost:200 money
+		cost:10000 money
 		req:have betterNet2
+		passive:multiply yield of fishingButton by 2
+
+	*betterNet4
+		name:Better Net 4
+		desc:Doubles the output of each fishing attempt. This stacks with other nets.
+		cost:50000 money
+		req:have betterNet3
+		passive:multiply yield of fishingButton by 2
+
+	*betterNet5
+		name:Better Net 5
+		desc:Doubles the output of each fishing attempt. This stacks with other nets.
+		cost:100000 money
+		req:have betterNet4
 		passive:multiply yield of fishingButton by 2
 
 	*winUpgrade
 		name:Pay off debts.
 		desc:Pay off all your gambling debts and win the game.
-		cost:1000000 money
+		cost:10000000 money
