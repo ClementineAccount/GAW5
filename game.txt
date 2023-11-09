@@ -224,7 +224,7 @@ Buildings
 		name:Canning Factory|Factories
 		desc:Purchase a canning factory for the [n:redFish], increasing its price. <//><b>Effect:</b><.>setthe price of [n:redFish] for equal to double the number of factories owned.
 		cost:1000 money
-		cost increase:125%
+		cost increase:115%
 		passive:redFishPrice is ((factory) * 2)
 	
 	*lightHouse
