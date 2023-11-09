@@ -88,11 +88,11 @@ Buttons
 		end
 		on tick:
 			hide sellFishButton
-			if (redFish > 0)
+			if (redFish >= 1)
 				show sellFishButton
-			else if (blueFish > 0)
+			else if (blueFish >= 1)
 				show sellFishButton
-			else if (yellowFish > 0)
+			else if (yellowFish >= 1)
 				show sellFishButton 
 			end
 		end
@@ -196,31 +196,38 @@ Resources
 Buildings
 	*fisherman|fishermen
 		name:Fisherman|Fishermen
-		desc:Hire a local fisherman. <//><b>Effect:</b><.>Catch 1 [n:redFish] every 5 seconds.
+		desc:Hire a local fisherman. <//><b>Effect:</b><.>Catch 1 [n:redFish] every second.
 		cost:20 money
-		cost increase:125%
-		on tick:yield 0.2 redFish
+		cost increase:101%
+		on tick:yield 1 redFish
 
 	*boat
 		name:Fishing Boat|Fishing Boats
 		desc:Purchase a fishing boat. <//><b>Effect:</b><.>Catch 1 [n:blueFish] every 10 seconds.
 		cost:50 money
-		cost increase:125%
+		cost increase:100%
 		on tick:yield 0.1 blueFish
 
-	*billboard
-		name:Billboard|Billboards
-		desc:Purchase a billboard to market the [n:redFish], increasing its price. <//><b>Effect:</b><.>Set the base price of [n:redFish] to equal double the total number of billboards owned.
-		cost:50 money
-		cost increase:200%
-		passive:redFishPrice is (billboard) * 2
+	*factory
+		name:Canning Factory|Factories
+		desc:Purchase a canning factory for the [n:redFish], increasing its price. <//><b>Effect:</b><.>Double the price of [n:redFish] for each factory owned.
+		cost:1000 money
+		cost increase:100%
+		passive:redFishPrice is pow(2, (factory))
 	
 	*lightHouse
 		name:Light House|Light Houses
 		desc:Purchase a light house to guide your ships. <//><b>Effect:</b><.>Doubles the [n:blueFish] that a [n:boat] can catch.
 		cost:250 money
-		cost increase:125%
+		cost increase:105%
 		passive:multiply yield of boat by 2
+
+	*lawyer
+		name:Lawyer|Lawyers
+		desc:Hire lawyers to lobby for decreased regulation of [n:yellowFish]. <//><b>Effect:</b><.>Doubles the price of [n:yellowFish].
+		cost:1000 money
+		cost increase:200%
+		passive:yellowFishPrice is 100 * pow(2, (lawyers))
 
 	*poacher
 		name:Poacher|Poachers
