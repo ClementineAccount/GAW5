@@ -29,7 +29,7 @@ Buttons
 		on catch:
 			if (chance((fishChance)%)) 
 				if (chance(60%))
-					if (chance(65%))
+					if (chance(90%))
 						yield 1 blueFish
 					else
 						yield 1 yellowFish
@@ -44,14 +44,14 @@ Buttons
 				yield 1 redFish
 				firstAttempt is 0
 			else if ((fishChance) is 100)
-				if (chance(75%))
+				if (chance(90%))
 						yield 1 blueFish
 					else
 						yield 1 yellowFish
 				end
 			else if ((chance((fishChance)%)) and ((fishChance) < 100)) 
 				if (chance(60%))
-					if (chance(75%))
+					if (chance(90%))
 						yield 1 blueFish
 					else
 						yield 1 yellowFish
@@ -158,7 +158,7 @@ Resources
 	*yellowFishPrice
 		name:price of the yellow fish
 		desc:The price of the yellow fish
-		start with:200
+		start with:100
 		hidden
 
 	*yellowFish
@@ -238,14 +238,14 @@ Buildings
 		name:Lawyer|Lawyers
 		desc:Hire lawyers to lobby for decreased regulation of [n:yellowFish]. <//><b>Effect:</b><.>Doubles the price of [n:yellowFish].
 		cost:1000 money
-		cost increase:400%
-		passive:yellowFishPrice is 200 * pow(2,(lawyer))
+		cost increase:325%
+		passive:yellowFishPrice is 100 * pow(2,(lawyer))
 
 	*poacher
 		name:Poacher|Poachers
 		desc:Hire a poacher to illegally fish for [n:yellowFish]. <//><b>Effect:</b><.> Every second there is a [poacherChance]% chance to catch a [n:yellowFish] for every poacher you own.
 		cost:250 money
-		cost increase:125%
+		cost increase:300%
 		on tick: 
 			if (chance((poacherChance)%))
 				yield 1 yellowFish
@@ -344,14 +344,14 @@ Upgrades
 	*betterNet4
 		name:Better Net 4
 		desc:Doubles the output of each fishing attempt. This stacks with other nets.
-		cost:50000 money
+		cost:100000 money
 		req:have betterNet3
 		passive:multiply yield of fishingButton by 2
 
 	*betterNet5
 		name:Better Net 5
 		desc:Doubles the output of each fishing attempt. This stacks with other nets.
-		cost:100000 money
+		cost:4000000 money
 		req:have betterNet4
 		passive:multiply yield of fishingButton by 2
 
@@ -365,9 +365,16 @@ Upgrades
 	*betterPoacher2
 		name:Misinformation Campaign
 		desc:Create a misinformation campaign to downplay the environmental impacts of poaching [n:yellowFish], giving your poaches a 15% chance per second to catch a [n:yellowFish].
-		cost:20000 money
+		cost:70000 money
 		req:have betterPoacher1
 		passive:poacherChance is 15
+
+	*betterPoacher3
+		name:Assassinate Activist Leader
+		desc:Assassinate a leading environmental activist leader, reducing the concern over the poaching of [n:yellowFish] and hence giving your poaches a 25% chance per second to catch a [n:yellowFish].
+		cost:3000000 money
+		req:have betterPoacher2
+		passive:poacherChance is 25
 
 	*winUpgrade
 		name:Pay off debts.
