@@ -3,8 +3,8 @@ Let's make a game!
 	by:Clem
 	desc:This is a simple fishing game that I am working on between 6/11/2023 to 12/11/2023. This is my first ever Idle Game Maker game! The ocean image is from: https://libreshot.com/calm-sea/ and the fish graphics are from: https://captainskeleto.itch.io/tropical-fishing-assets-pixelart-pixel-art-sprite-tropical-fish-pack-for-rpg-fan
 	created:6/11/2023
-	updated:8/11/2023
-	version:0.13.0
+	updated:11/11/2023
+	version:0.14.0
 
 Settings
 	background:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/ocean.jpg
@@ -443,6 +443,16 @@ Upgrades
 		req:have betterPoacher2
 		passive:poacherChance is 25
 
+	*betterPrice
+		name:Buy out a congressman
+		desc:Use your vast wealth and influence to corrupt a congressman. <//><b>Effect:</b><.>Doubles the prices of all fish sold.
+		cost:50000000 money
+		req:have betterPoacher3
+		passive:multiply yield of selly by 2
+		passive:multiply yield of sellBlue by 2
+		passive:multiply yield of sellRedButton by 2
+		passive:multiply yield of sellFishButton by 2
+
 	*betterFisherman1
 		name:Fishing Union
 		desc:Allow your fishermen to unionize, improving their long term productivity by reducing accidents caused by unsafe working conditions and overworking. <//><b>Effect:</b><.>Doubles production of [n:redFish] by [n:fisherman].
@@ -463,10 +473,19 @@ Upgrades
 
 	*betterRestaurant3
 		name:International Fast Food Chain
-		desc:Expand your restaurants into the international market, further increasing its profit margin. <//><b>Effect:</b><.>Multiply the profits of [n:restaurant] by 25. Stacks with previous upgrades
+		desc:Expand your restaurants into the international market, further increasing its profit margin. <//><b>Effect:</b><.>Multiply the profits of [n:restaurant] by 50. Stacks with previous upgrades
 		req:have betterRestaurant2
 		cost:5000000 money
-		passive:multiply yield of restaurant by 25
+		passive:multiply yield of restaurant by 50
+
+	*betterRestaurant4
+		name:Tax Evasion
+		desc:Use your legal team in order to pay less taxes for your international fast food restaurants. <//><b>Effect:</b><.>Multiply the profits of [n:restaurant] by 5. Stacks with previous upgrades
+		req:have betterRestaurant3
+		req:5 lawyer
+		cost:350000000 money
+		passive:multiply yield of restaurant by 5
+		
 
 	*winUpgrade
 		name:Pay off debts.
@@ -474,8 +493,14 @@ Upgrades
 		cost:10000000 money
 
 	*winUpgrade2
-		name:Buy a private island.
-		desc:Buy a private island and win the game (again)
-		req:have winUpgrade
+		name:Buy a small apartment in the San Francisco Bay Area
+		desc:Buy a small apartment and win the game (again)
+		req:have winUpgrade2
 		cost:200000000 money
+
+	*winUpgrade3
+		name:Buy a private island.
+		desc:Buy a private island and win the game (for real this time... i havent coded in an animation)
+		req:have winUpgrade2
+		cost:2000000000 money
 
