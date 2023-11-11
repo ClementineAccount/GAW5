@@ -157,7 +157,7 @@ Buttons
 				show sellFishButton 
 			end
 		end
-		text:Sell fish at the market.
+		text:Sell all fish at the market.
 		tooltip origin:bottom
 		tooltip class:red
 
