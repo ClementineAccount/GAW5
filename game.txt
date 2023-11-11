@@ -271,21 +271,21 @@ Buildings
 		desc:Purchase a fishing boat. <//><b>Effect:</b><.>Catch 1 [n:blueFish] every second.
 		cost:100 money
 		cost increase:125%
-		on tick:yield 0.5 blueFish
+		on tick:yield 1 blueFish
 
 	*factory
 		name:Canning Factory|Factories
 		desc:Purchase a canning factory for the [n:redFish], increasing its price. <//><b>Effect:</b><.>Sets the price of [n:redFish] for equal the number of factories owned.
-		cost:1000 money
-		cost increase:175%
+		cost:5000 money
+		cost increase:300%
 		passive:redFishPrice is (factory)
 
 	*farm
 		name:Fish Farm|Fish Farms
-		desc:Build a farm to breed [n:redFish]. <//><b>Effect:</b><.>Multiply the production of [n:redFish] to two to the power of number of fish farms.
+		desc:Build a farm to breed [n:redFish]. <//><b>Effect:</b><.>Multiply the production of [n:redFish] by 10 for every fish farm.
 		cost:20000 redFish
 		cost increase:150%
-		passive:multiply yield of fisherman by pow(2,(farm))
+		passive:multiply yield of fisherman by 10
 	
 	*lightHouse
 		name:Light House|Light Houses
@@ -463,13 +463,19 @@ Upgrades
 
 	*betterRestaurant3
 		name:International Fast Food Chain
-		desc:Expand your restaurants into the international market, further increasing its profit margin. <//><b>Effect:</b><.>Multiply the profits of [n:restaurant] by 100. Stacks with previous upgrades
+		desc:Expand your restaurants into the international market, further increasing its profit margin. <//><b>Effect:</b><.>Multiply the profits of [n:restaurant] by 25. Stacks with previous upgrades
 		req:have betterRestaurant2
 		cost:5000000 money
-		passive:multiply yield of restaurant by 100
+		passive:multiply yield of restaurant by 25
 
 	*winUpgrade
 		name:Pay off debts.
 		desc:Pay off all your gambling debts and win the game.
 		cost:10000000 money
+
+	*winUpgrade2
+		name:Buy a private island.
+		desc:Buy a private island and win the game (again)
+		req:have winUpgrade
+		cost:200000000 money
 
