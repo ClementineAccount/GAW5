@@ -275,15 +275,15 @@ Buildings
 
 	*factory
 		name:Canning Factory|Factories
-		desc:Purchase a canning factory for the [n:redFish], increasing its price. <//><b>Effect:</b><.>Sets the price of [n:redFish] for equal to double the number of factories owned.
+		desc:Purchase a canning factory for the [n:redFish], increasing its price. <//><b>Effect:</b><.>Sets the price of [n:redFish] for equal the number of factories owned.
 		cost:1000 money
 		cost increase:175%
-		passive:redFishPrice is ((factory) * 2)
+		passive:redFishPrice is (factory)
 
 	*farm
 		name:Fish Farm|Fish Farms
 		desc:Build a farm to breed [n:redFish]. <//><b>Effect:</b><.>Multiply the production of [n:redFish] to two to the power of number of fish farms.
-		cost:25000 redFish
+		cost:20000 redFish
 		cost increase:150%
 		passive:multiply yield of fisherman by pow(2,(farm))
 	
@@ -299,7 +299,7 @@ Buildings
 		desc:Build a seafood restaurant using [n:blueFish] <//><b>Effect:</b><.>Generate revenue of 10 money per second for each restaurant built.
 		cost:5000 money, 3000 blueFish
 		cost increase:125%
-		on tick:yield 100 money
+		on tick:yield 10 money
 
 	*lawyer
 		name:Lawyer|Lawyers
@@ -448,6 +448,25 @@ Upgrades
 		desc:Allow your fishermen to unionize, improving their long term productivity by reducing accidents caused by unsafe working conditions and overworking. <//><b>Effect:</b><.>Doubles production of [n:redFish] by [n:fisherman].
 		cost:10000 money
 		passive:multiply yield of fisherman by 2
+
+	*betterRestaurant1
+		name:Franchising
+		desc:Franchise your seafood restaurant into a local chain, increasing its profit margin. <//><b>Effect:</b><.>Doubles the profits of [n:restaurant].
+		cost:50000 money
+		passive:multiply yield of restaurant by 2
+
+	*betterRestaurant2
+		name:Fast Food Chain
+		desc:Turn your seafood restaurants into a national fast food chain, further increasing its profit margin. <//><b>Effect:</b><.>Multiply the profits of [n:restaurant] by 10. Stacks with franchising.
+		cost:100000 money
+		passive:multiply yield of restaurant by 10
+
+	*betterRestaurant3
+		name:International Fast Food Chain
+		desc:Expand your restaurants into the international market, further increasing its profit margin. <//><b>Effect:</b><.>Multiply the profits of [n:restaurant] by 100. Stacks with previous upgrades
+		req:have betterRestaurant2
+		cost:5000000 money
+		passive:multiply yield of restaurant by 100
 
 	*winUpgrade
 		name:Pay off debts.
