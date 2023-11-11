@@ -297,9 +297,9 @@ Buildings
 	*restaurant
 		name:Seafood Restaurant|Seafood Restaurants
 		desc:Build a seafood restaurant using [n:blueFish] <//><b>Effect:</b><.>Generate revenue of 10 money per second for each restaurant built.
-		cost:5000 money, 6000 blueFish
+		cost:5000 money, 3000 blueFish
 		cost increase:125%
-		on tick:yield 10 money
+		on tick:yield 100 money
 
 	*lawyer
 		name:Lawyer|Lawyers
