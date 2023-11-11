@@ -29,7 +29,7 @@ Buttons
 		on catch:
 			if (chance((fishChance)%)) 
 				if (chance(60%))
-					if (chance(90%))
+					if (chance(95%))
 						yield 1 blueFish
 					else
 						yield 1 yellowFish
@@ -44,19 +44,19 @@ Buttons
 				yield 1 redFish
 				firstAttempt is 0
 			else if ((fishChance) is 100)
-				if (chance(90%))
+				if (chance(95%))
 						yield 1 blueFish
 					else
 						yield 1 yellowFish
 				end
 			else if ((chance((fishChance)%)) and ((fishChance) < 100)) 
-				if (chance(60%))
-					if (chance(90%))
+				if (chance(70%))
+					if (chance(95%))
 						yield 1 blueFish
 					else
 						yield 1 yellowFish
 					end
-				else if ((fishChance) < 100)
+				else
 					yield 1 redFish
 				end
 			end
@@ -277,13 +277,13 @@ Buildings
 		name:Canning Factory|Factories
 		desc:Purchase a canning factory for the [n:redFish], increasing its price. <//><b>Effect:</b><.>Sets the price of [n:redFish] for equal to double the number of factories owned.
 		cost:1000 money
-		cost increase:115%
+		cost increase:175%
 		passive:redFishPrice is ((factory) * 2)
 
 	*farm
 		name:Fish Farm|Fish Farms
-		desc:Build a farm to breed [n:redFish]. <//><b>Effect:</b><.>Squares the production of [n:redFish] per farm.
-		cost:50000 redFish
+		desc:Build a farm to breed [n:redFish]. <//><b>Effect:</b><.>Multiply the production of [n:redFish] to two to the power of number of fish farms.
+		cost:25000 redFish
 		cost increase:150%
 		passive:multiply yield of fisherman by pow(2,(farm))
 	
@@ -291,8 +291,15 @@ Buildings
 		name:Light House|Light Houses
 		desc:Purchase a light house to guide your ships. <//><b>Effect:</b><.>Multiplies the [n:blueFish] that a [n:boat] can catch by 2.
 		cost:500 money
-		cost increase:800%
+		cost increase:200%
 		passive:multiply yield of boat by 2
+
+	*restaurant
+		name:Seafood Restaurant|Seafood Restaurants
+		desc:Build a seafood restaurant using [n:blueFish] <//><b>Effect:</b><.>Generate revenue of 10 money per second for each restaurant built.
+		cost:5000 money, 6000 blueFish
+		cost increase:125%
+		on tick:yield 10 money
 
 	*lawyer
 		name:Lawyer|Lawyers
@@ -435,6 +442,12 @@ Upgrades
 		cost:3000000 money
 		req:have betterPoacher2
 		passive:poacherChance is 25
+
+	*betterFisherman1
+		name:Fishing Union
+		desc:Allow your fishermen to unionize, improving their long term productivity by reducing accidents caused by unsafe working conditions and overworking. <//><b>Effect:</b><.>Doubles production of [n:redFish] by [n:fisherman].
+		cost:10000 money
+		passive:multiply yield of fisherman by 2
 
 	*winUpgrade
 		name:Pay off debts.
