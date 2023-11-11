@@ -4,7 +4,7 @@ Let's make a game!
 	desc:This is a simple fishing game that I am working on between 6/11/2023 to 12/11/2023. This is my first ever Idle Game Maker game! The ocean image is from: https://libreshot.com/calm-sea/ and the fish graphics are from: https://captainskeleto.itch.io/tropical-fishing-assets-pixelart-pixel-art-sprite-tropical-fish-pack-for-rpg-fan
 	created:6/11/2023
 	updated:11/11/2023
-	version:0.14.0
+	version:0.15.1
 
 Settings
 	background:https://media.githubusercontent.com/media/ClementineAccount/GAW5/main/ocean.jpg
@@ -44,14 +44,14 @@ Buttons
 				yield 1 redFish
 				firstAttempt is 0
 			else if ((fishChance) is 100)
-				if (chance(95%))
+				if (chance(75%))
 						yield 1 blueFish
 					else
 						yield 1 yellowFish
 				end
 			else if ((chance((fishChance)%)) and ((fishChance) < 100)) 
 				if (chance(70%))
-					if (chance(95%))
+					if (chance(75%))
 						yield 1 blueFish
 					else
 						yield 1 yellowFish
@@ -198,7 +198,7 @@ Resources
 	*blueFishPrice
 		name:price of the blue fish
 		desc:The price of the blue fish
-		start with:10
+		start with:5
 		hidden
 
 	*blueFish
@@ -269,8 +269,8 @@ Buildings
 	*boat
 		name:Fishing Boat|Fishing Boats
 		desc:Purchase a fishing boat. <//><b>Effect:</b><.>Catch 1 [n:blueFish] every second.
-		cost:100 money
-		cost increase:125%
+		cost:85 money
+		cost increase:115%
 		on tick:yield 1 blueFish
 
 	*factory
@@ -282,16 +282,16 @@ Buildings
 
 	*farm
 		name:Fish Farm|Fish Farms
-		desc:Build a farm to breed [n:redFish]. <//><b>Effect:</b><.>Multiply the production of [n:redFish] by 10 for every fish farm.
+		desc:Build a farm to breed [n:redFish]. <//><b>Effect:</b><.>Multiply the production of [n:fisherman] by 10 for every fish farm.
 		cost:20000 redFish
-		cost increase:150%
+		cost increase:125%
 		passive:multiply yield of fisherman by 10
 	
 	*lightHouse
 		name:Light House|Light Houses
 		desc:Purchase a light house to guide your ships. <//><b>Effect:</b><.>Multiplies the [n:blueFish] that a [n:boat] can catch by 2.
 		cost:500 money
-		cost increase:200%
+		cost increase:135%
 		passive:multiply yield of boat by 2
 
 	*restaurant
@@ -305,14 +305,14 @@ Buildings
 		name:Lawyer|Lawyers
 		desc:Hire lawyers to lobby for decreased regulation of [n:yellowFish]. <//><b>Effect:</b><.>Doubles the price of [n:yellowFish].
 		cost:1000 money
-		cost increase:325%
+		cost increase:250%
 		passive:yellowFishPrice is 100 * pow(2,(lawyer))
 
 	*poacher
 		name:Poacher|Poachers
 		desc:Hire a poacher to illegally fish for [n:yellowFish]. <//><b>Effect:</b><.> Every second there is a [poacherChance]% chance to catch a [n:yellowFish] for every poacher you own.
-		cost:250 money
-		cost increase:300%
+		cost:100 money
+		cost increase:250%
 		on tick: 
 			if (chance((poacherChance)%))
 				yield 1 yellowFish
@@ -495,12 +495,12 @@ Upgrades
 	*winUpgrade2
 		name:Buy a small apartment in the San Francisco Bay Area
 		desc:Buy a small apartment and win the game (again)
-		req:have winUpgrade2
+		req:have winUpgrade
 		cost:200000000 money
 
 	*winUpgrade3
 		name:Buy a private island.
 		desc:Buy a private island and win the game (for real this time... i havent coded in an animation)
 		req:have winUpgrade2
-		cost:2000000000 money
+		cost:1500000000 money
 
